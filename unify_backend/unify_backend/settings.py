@@ -38,8 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'events.apps.EventsConfig'
+    'events.apps.EventsConfig',
+    'corsheaders'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
+CCORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
