@@ -20,7 +20,7 @@ class Event(models.Model):
     host  = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='hosted_events')
     participants = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='event_participants', blank=True)
     max_attendees = models.PositiveIntegerField(null=True, blank=True)
-    image = models.ImageField(upload_to='../media/images/events/%Y/%m/%d', null=True, blank=True)
+    image = models.ImageField(upload_to='images/events/%Y/%m/%d', null=True, blank=True)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     location = models.CharField(max_length=200)
