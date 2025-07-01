@@ -48,8 +48,8 @@ REST_FRAMEWORK = {
     ]
 }
 
-CCORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:5173'
 ]
 
 
@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'unify_backend.urls'

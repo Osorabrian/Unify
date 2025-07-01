@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect} from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/events/',)
+    .then(response => response.json())
+    .then(data => setEvents(data))
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Unify</h1>
+      <p>Unify is a simple, yet powerful, tool for managing your React applications.</p>
+      {
+        events.map(event => {
+          return (
+            <div key={event.id}>
+              <h2>{event.title}</h2>
+              <p>{event.description}</p>
+            </div>
+          )
+        })
+      }
     </>
   )
 }
