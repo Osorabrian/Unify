@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react'
 import './App.css'
+import Navbar from './components/navigation/navbar'
 
 function App() {
 
@@ -11,20 +12,26 @@ function App() {
     .then(data => setEvents(data))
   }, [])
 
-  return (
-    <>
-      <h1>Unify</h1>
-      <p>Unify is a simple, yet powerful, tool for managing your React applications.</p>
-      {
-        events.map(event => {
+  const events_list = () => {
+    return (
+      <>
+        {events.map(event => {
           return (
             <div key={event.id}>
               <h2>{event.title}</h2>
-              <p>{event.description}</p>
             </div>
           )
-        })
-      }
+        })}
+      </>
+    )
+  }
+
+  return (
+    <>
+      <Navbar />
+      <h1>Unify</h1>
+      <p>Unify is a simple, yet powerful, tool for managing your React applications.</p>
+      {events_list()}
     </>
   )
 }
