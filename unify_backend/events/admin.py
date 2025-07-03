@@ -6,7 +6,7 @@ from .models import Event
 class EventAdmin(admin.ModelAdmin):
     list_display = ('title', 'location', 'host')
     search_fields = ('title', 'location', 'host')
-    raw_id_fields = ('host',)
+    raw_id_fields = ('host', 'participants')
     date_hierarchy = 'start_time'
     prepopulated_fields = {'slug': ('title',)}
     ordering = ('-start_time',)
