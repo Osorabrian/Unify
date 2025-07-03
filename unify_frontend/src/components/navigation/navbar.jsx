@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -22,7 +23,7 @@ export default function Navbar() {
                 <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Unify
+                    <Link to="/">Unify</Link>
                 </Typography>
                 <Button color="inherit">Login</Button>
             </Toolbar>
