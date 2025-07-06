@@ -7,4 +7,5 @@ class EventSerializer(serializers.ModelSerializer):
     # Assuming you have a 'username' field in the User model
     class Meta:
         model = Event
-        fields = ['id', 'title', 'description', 'start_time', 'end_time', 'host', 'participants', 'max_attendees', 'image', 'event_type', 'location']
+        fields = ['id', 'title', 'description', 'start_time', 'end_time', 'host', 'participants', 'max_attendees', 'image', 'event_type', 'location', 'price']
+        

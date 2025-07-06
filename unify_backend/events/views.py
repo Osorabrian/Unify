@@ -8,3 +8,8 @@ class EventsView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     
+class EventDetailView(generics.RetrieveAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    lookup_field = 'id'
+    

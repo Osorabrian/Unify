@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router'
+import './events.css'
 
 export default function Events() {
 
@@ -16,7 +17,7 @@ export default function Events() {
             {events.map(event => {
             return (
                 <div key={event.id}>
-                    <img src={event.image} alt={event.title} />
+                    <img src={event.image} alt={event.title} id="event-image" />
                     <h2><Link to={`/${event.id}/`}>{event.title}</Link></h2>
                     <p>{event.description}</p>
                     <p>{new Date(event.start_time).toLocaleDateString()}</p>

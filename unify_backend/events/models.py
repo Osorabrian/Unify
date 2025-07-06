@@ -18,6 +18,7 @@ class Event(models.Model):
     event_type = models.CharField(max_length=20, choices=EventType.choices, default=EventType.OTHER)
     description = models.TextField()
     host  = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='hosted_events')
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     participants = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='event_participants', blank=True)
     max_attendees = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='images/events/%Y/%m/%d', null=True, blank=True)
