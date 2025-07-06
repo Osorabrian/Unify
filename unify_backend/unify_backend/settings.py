@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'events.apps.EventsConfig',
-    'corsheaders'
+    'corsheaders',
+    'accounts.apps.AccountsConfig',
 ]
 
 REST_FRAMEWORK = {
